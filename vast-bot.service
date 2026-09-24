@@ -1,0 +1,14 @@
+[Unit]
+Description=Vast.ai GPU Telegram bot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/vast-vn-bot
+ExecStart=/home/ubuntu/vast-vn-bot/.venv/bin/python bot.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
